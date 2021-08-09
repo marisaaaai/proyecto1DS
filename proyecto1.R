@@ -108,7 +108,7 @@ AltaVerapaz$X.2 <- "ALTA VERAPAZ"
 BajaVerapaz$X.2 <- "BAJA VERAPAZ"
 Chimaltenango$X.2 <- "CHIMALTENANGO"
 Chiquimula$X.2 <- "CHIQUIMULA"
-CiudadCapital$X.2 <- "CIUDAD CAPITAL"
+  CiudadCapital$X.2 <- "CIUDAD CAPITAL"
 ElProgreso$X.2 <- "EL PROGRESO"
 Escuintla$X.2 <- "ESCUINTLA"
 Guatemala$X.2 <- "GUATEMALA"
@@ -203,6 +203,43 @@ total$MODALIDAD <- ifelse(total$MODALIDAD == "", NA, total$MODALIDAD)
 total$JORNADA <- ifelse(total$JORNADA == "", NA, total$JORNADA)
 total$PLAN <- ifelse(total$PLAN == "", NA, total$PLAN)
 total$DEPARTAMENTAL <- ifelse(total$DEPARTAMENTAL == "", NA, total$DEPARTAMENTAL)
+
+head(sort(table(total$CODIGO), decreasing = T))
+head(sort(table(total$CODIGO), decreasing = F))
+head(sort(table(total$DISTRITO), decreasing = T))
+head(sort(table(total$DISTRITO), decreasing = F))
+head(sort(table(total$DEPARTAMENTO), decreasing = T))
+head(sort(table(total$DEPARTAMENTO), decreasing = F))
+head(sort(table(total$MUNICIPIO), decreasing = T))
+head(sort(table(total$MUNICIPIO), decreasing = F))
+head(sort(table(total$ESTABLECIMIENTO), decreasing = T))
+head(sort(table(total$ESTABLECIMIENTO), decreasing = F))
+head(sort(table(total$DIRECCION), decreasing = T))
+head(sort(table(total$DIRECCION), decreasing = F))
+head(sort(table(total$TELEFONO), decreasing = T))
+
+head(sort(table(total$TELEFONO), decreasing = F))
+head(sort(table(total$SUPERVISOR), decreasing = T))
+head(sort(table(total$SUPERVISOR), decreasing = F))
+head(sort(table(total$DIRECTOR), decreasing = T))
+head(sort(table(total$DIRECTOR), decreasing = F))
+head(sort(table(total$NIVEL), decreasing = T))
+head(sort(table(total$NIVEL), decreasing = F))
+head(sort(table(total$SECTOR), decreasing = T))
+head(sort(table(total$SECTOR), decreasing = F))
+head(sort(table(total$AREA), decreasing = T))
+head(sort(table(total$AREA), decreasing = F))
+head(sort(table(total$STATUS), decreasing = T))
+head(sort(table(total$STATUS), decreasing = F))
+head(sort(table(total$MODALIDAD), decreasing = T))
+head(sort(table(total$MODALIDAD), decreasing = F))
+head(sort(table(total$JORNADA), decreasing = T))
+head(sort(table(total$JORNADA), decreasing = F))
+head(sort(table(total$PLAN), decreasing = T))
+head(sort(table(total$PLAN), decreasing = F))
+head(sort(table(total$DEPARTAMENTAL), decreasing = T))
+head(sort(table(total$DEPARTAMENTAL), decreasing = F))
+
 #Ver cuantos NA hay
 summary(total)
 table(is.na(total$CODIGO))
@@ -240,3 +277,7 @@ total$DIRECTOR <- ifelse(total$DIRECTOR == "--------------", NA, total$DIRECTOR)
 #CAMBIAR EL AREA SIN ESPECIFICAR POR NA
 head(sort(table(total$AREA), decreasing = F))
 total$AREA <- ifelse(total$AREA == "SIN ESPECIFICAR", NA, total$AREA)
+
+write.csv(total,"./data/datos.csv", row.names = FALSE)
+#datos <- read.csv("./data/datos.csv")
+
