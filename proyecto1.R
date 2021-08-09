@@ -235,6 +235,8 @@ total$DIRECTOR <- ifelse(total$DIRECTOR == "---------------", NA, total$DIRECTOR
 total$DIRECTOR <- ifelse(total$DIRECTOR == "0", NA, total$DIRECTOR)
 total$DIRECTOR <- ifelse(total$DIRECTOR == "-------------", NA, total$DIRECTOR)
 total$DIRECTOR <- ifelse(total$DIRECTOR == "-----------------------------", NA, total$DIRECTOR)
+total$DIRECTOR <- ifelse(total$DIRECTOR == "--------------", NA, total$DIRECTOR)
+
 #CAMBIAR EL AREA SIN ESPECIFICAR POR NA
 head(sort(table(total$AREA), decreasing = F))
 total$AREA <- ifelse(total$AREA == "SIN ESPECIFICAR", NA, total$AREA)
